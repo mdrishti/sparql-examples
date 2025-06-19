@@ -14,7 +14,7 @@ PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX qudt: <https://qudt.org/2.1/schema/qudt#>		
+PREFIX qudt: <https://qudt.org/2.1/schema/qudt/>
 SELECT DISTINCT ?source_wd ?sourceName ?tryDataLab ?tryDataVal ?unit ?unitComment WHERE {
 	?trySpObs sosa:isSampleOf ?source_trySpName ; #retrieve trait/non-trait data from trydb for trySpName (scientific name of plant species as listed in trydb)
 		rdfs:label ?sourceName ;

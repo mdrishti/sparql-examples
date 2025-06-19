@@ -15,7 +15,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX qudt: <https://qudt.org/2.1/schema/qudt#>
+PREFIX qudt: <https://qudt.org/2.1/schema/qudt/>
 SELECT DISTINCT ?source_wdx ?sourceName ?traitCategory ?traitLabel ?tryDataVal ?unit ?unitComment WHERE 
 	{
 		# trait data

@@ -14,7 +14,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX emi: <https://purl.org/emi#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX qudt: <https://qudt.org/2.1/schema/qudt#>
+PREFIX qudt: <https://qudt.org/2.1/schema/qudt/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>		
 SELECT DISTINCT ?source_wdx ?sourceName ?tryDataLab ?tryDataVal ?unit ?unitComment WHERE {
 	# metabolite data
