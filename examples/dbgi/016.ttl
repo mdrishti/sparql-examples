@@ -41,18 +41,19 @@ SELECT DISTINCT ?organismName ?organismWD ?loc ?lats ?longs WHERE {
 			?wd_chem wdt:P235 ?ik ;
 	    			wdt:P703 ?organismWD .
 			 VALUES ?wd_chem { wd:Q27251426 }
-			 FILTER(?organismWD = ?source_wdx || ?organismWD = ?target_wdx)	# ensure that organism-wd is either from source or target
 			 OPTIONAL { ?organismWD wdt:P225 ?organismName . }
 		}
 	}
 	# interaction data			
+	FILTER(?organismWD = ?source_wdx || ?organismWD = ?target_wdx)	# ensure that organism-wd is either from source or target
 	?intxn emi:hasSource ?source ; # retrieve interaction-pairs
 		emi:hasTarget ?target .
 	?source emi:inTaxon ?source_wdx . # retrieve wikidata-id of source
 		?target emi:inTaxon ?target_wdx . # retrieve wikidata-id of target
-		?intxn prov:atLocation ?loc ; # retrieve the location of the interaction, and the latitude/longitude
-			wgs:lat ?lats ;					
-			wgs:long ?longs .
+	# retrieve the location of the interaction, and the latitude/longitude
+	OPTIONAL { ?intxn prov:atLocation ?loc . }
+	OPTIONAL { ?intxn wgs:lat ?lats . }			
+	OPTIONAL { ?intxn wgs:long ?longs . }
 } LIMIT 4000""" ;
     schema:target <https://purl.org/emi> ;
     spex:federatesWith <https://qlever.cs.uni-freiburg.de/api/wikidata> .
